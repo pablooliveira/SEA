@@ -8,6 +8,8 @@ make -C ../labs
 find ../labs/ -name '*[0-9].html' | xargs -I {} cp {} SEA/labs/
 cp ../labs/pandoc.css SEA/labs/
 cp ../labs/bitbucket.png SEA/labs/
+cp ../labs/mario.jpg SEA/labs/
+cp ../labs/Aybabtu.png SEA/labs/
 
 pandoc -s -S -c pandoc.css syllabus.md -o SEA/index.html
 #pandoc -s -S -c pandoc.css projet.md -o SEA/projet.html
