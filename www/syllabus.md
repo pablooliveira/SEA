@@ -16,6 +16,10 @@
 
     * Sert à poser des questions sur les cours, TDs, projets. Tout le monde est encouragé à répondre !
 
+    * **Attention:** Pour que tout le monde profite des questions/réponses, je
+      ne repondrai que aux questions posées sur le groupe de discussion. 
+      Les mails avec question envoyés sur une autre adresse; ne recevront pas de réponse. 
+
 * Notation
 
     * Un contrôle en fin de semestre
@@ -28,6 +32,12 @@
         * 35% Contrôle 
         * 35% Mini-Projet
         * 30% QCM 
+
+## Horaire des cours et retards
+
+Les cours commencent à 8h15. L'horaire est un peu plus matinal que pour les autres cours; mais cela permets
+également au Groupe 1 de partir en WE un peu plus tôt le vendredi soir :-) Je compte sur votre ponctualité 
+et me réserve le droit de ne pas admettre en cours les étudiants sans justificatif arrivant en retard.
 
 ## Mini-Projets
 
@@ -80,3 +90,9 @@ connaissances théoriques apprises en cours en pratique.
 * [Stanford CS 140 lectures Winter'14 de David Mazières](http://www.scs.stanford.edu/14wi-cs140/)
 
 * Understanding the Linux Kernel 3rd Edition de Bovet, and Cesati
+
+## Sources
+
+Some of the lectures above are translated to french and adapted with some changes from Stanford [CS140 Operation System lectures](http://www.scs.stanford.edu/14wi-cs140/). Thanks to the authors of CS140 lectures for their kind permission to modify and adapt their work.
+
+The sources of the translated lectures and the labs are available at https://github.com/pablooliveira/SEA. You can modify and redistribute them under the [by-nc-sa-3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/) license.

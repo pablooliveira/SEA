@@ -10,5 +10,5 @@ The following lectures,
 	7-memvirt
 	8-protection
 
-are translated and adapted with some changes from Standford CS140 Operation System lectures (http://www.scs.stanford.edu/14wi-cs140/).
+are translated and adapted with some changes from Stanford CS140 Operation System lectures (http://www.scs.stanford.edu/14wi-cs140/).
 Thanks to the original authors for making them freely available, modifiable and redistributable (see ./CS140 Lecture notes-permission-to-modify.pdf).
