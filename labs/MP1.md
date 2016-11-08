@@ -22,55 +22,44 @@ Le 2 fait référence à la section 2 du manuel qui catalogue les fonctions syst
 Utilisation de Git
 ------------------
 
-Pour tous les TPs de système on utilisera [git](http://git-scm.com).
-Si vous travaillez sur romuald commencez par rajouter git dans votre $PATH,
+Pour tous les Mini-Projets (MPs) de système on
+utilisera [git](http://git-scm.com). Vous avez vu son utilisation et configuré
+un dépôt dans le [TP1](T1.html).
+
+Allez sur codeanywhere et créez un nouvel répertoire pour travailler sur le MP1:
 
 ```bash
-    $ export PATH=/users/ens/pabdeoli/bin/:$PATH
+    $ cd sea/
+    # Créez maintenant un répertoire MP1
+    $ mkdir MP1/
+    $ cd MP1/
 ```
 
-
-Utilisez le dépôt du TP1:
-
-```bash
-    $ cd tps-ase/
-    # Créez maintenant un répertoire TP2
-    $ mkdir TP2/
-    $ cd TP2/
-```
-
-Faites maintenant le TP normalement. Vous travaillerez sur le répertoire ```TP2``` que vous
+Faites maintenant le MP normalement. Vous travaillerez sur le répertoire ```MP1``` que vous
 venez de créer. À chaque question vous *committerez* vos modifications.
 
-Pour envoyer votre travail sur le serveur de rendu (en fin de séance), suivez les étapes ci-dessous:
+Pour envoyer votre travail sur le serveur de rendu (en fin de séance), vous utiliserez la commande:
 
 ```bash
-    $ git remote add central ssh://gitolite@tahiti.prism.uvsq.fr/prenom_nom
-
-    $ git push -u central master
-    Counting objects: 3, done.
-    Delta compression using up to 4 threads.
-    Compressing objects: 100% (2/2), done.
-    Writing objects: 100% (3/3), 230 bytes, done.
-    Total 3 (delta 0), reused 0 (delta 0)
-    To ssh://gitolite@tahiti.prism.uvsq.fr/prenom_nom
-     * [new branch]      master -> master
-    Branch master set up to track remote branch master from central.
+    $ git push central master
 ```
 
 Notation
 --------
 
-Ce TP sera fait sur deux séances et noté.
+Ce MP sera noté. La date de rendu est disponible sur
+le [calendrier des cours](../index.html). Le rendu se fera en pushant sur votre
+dépôt SEA. Assurez vous que lors du [TP1](T1.html) vous m'avez donné les droits
+en lecture sur bitbucket; sinon je ne pourrai pas le corriger.
 
 Trois critères seront utilisés pour la notation:
 
-* Correction du code (70%): votre code sera évalué sur des exemples (comme
+* Correction du code: votre code sera évalué sur des exemples (comme
   les exemple donnés dans le sujet).
 
-* Code clair (15%): votre code est clair, indenté et intelligemment commenté
+* Code clair: votre code est clair, indenté et intelligemment commenté
 
-* Utilisation de git (15%): un commit par exercice, messages clairs et informatifs
+* Utilisation de git: un commit par exercice, messages clairs et informatifs
 
 Un shell simple
 ---------------
