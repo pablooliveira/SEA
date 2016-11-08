@@ -33,6 +33,9 @@
         * 35% Mini-Projet
         * 30% QCM 
 
+Pour tout rendu je vous invite à prendre connaissance de la [charte
+anti-plagiat à l'UVSQ](http://www.etu.uvsq.fr/medias/fichier/guide-anti-plagiat-et-charte-nvlogo_1409307925225-pdf).
+
 ## Horaire des cours et retards
 
 Les cours commencent à 8h15. L'horaire est un peu plus matinal que pour les autres cours; mais cela permets
