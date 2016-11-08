@@ -93,6 +93,6 @@ connaissances théoriques apprises en cours en pratique.
 
 ## Sources
 
-Some of the lectures above are translated to french and adapted with some changes from Stanford [CS140 Operation System lectures](http://www.scs.stanford.edu/14wi-cs140/). Thanks to the authors of CS140 lectures for their kind permission to modify and adapt their work.
+Some of the lectures above are translated to french and adapted with some changes from Stanford [CS140 Operating System lectures](http://www.scs.stanford.edu/14wi-cs140/). Thanks to the authors of CS140 lectures for their kind permission to modify and adapt their work.
 
-The sources of the translated lectures and the labs are available at https://github.com/pablooliveira/SEA. You can modify and redistribute them under the [by-nc-sa-3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/) license.
+The sources of the translated lectures and the labs are [available](https://github.com/pablooliveira/SEA). You can modify and redistribute them under the [by-nc-sa-3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/) license.
