@@ -21,7 +21,7 @@
 \begin{slide}{Informations Administratives (1)}
 \itms{
   \item Cours Systèmes Exploitations Avancé (SEA)
-  \item Site du cours: \url{http://tahiti.prism.uvsq.fr/os/}
+  \item Site du cours: \url{https://www.sifflez.org/lectures/SEA/}
   \ittms{
     \item Emploi du temps, documents et notes de cours
   }
@@ -40,7 +40,6 @@
 \begin{slide}{Informations Administratives (2)}
 \itms{
   \item Prof.:  \texttt{pablo.oliveira@uvsq.fr}
-  \item Chargés TD: \texttt{chadi.akel@exascale-computing.eu}, \texttt{michel.popov@exascale-computing.eu}
   \item Group de discussion (inscription obligatoire)
     \ittms{
       \item \url{https://groups.google.com/group/iatic4-os/}
@@ -49,14 +48,14 @@
     }
   \item Dates clés:
   \ittms{
-    \item Cours: Lundi 8h00-9h30 salle 113
-    \item TDs: Lundi 9h45-12h45 salles 116/117
+    \item Cours: Vendredi 08:15-10:15 214
+    \item TDs: Vendredi G1 10:30-13:00 -- G2 14:15-16:45
   }
   \item Contrôle Continu
   \ittms{
-    \item Contrôle en fin de semestre
-    \item QCMs en début de cours
-    \item Certains rendus de TDs notés
+    \item 30\% Mini-Projets notés
+    \item 35\% QCMs en début de cours
+    \item 35\% Contrôle
   }
 }
 \end{slide}
@@ -233,7 +232,7 @@
   \item
     En langage machine avec des panneaux de connexion
   \item
-    Pas d'OS, le programme tourne directement sur la machine
+    Pas de SE, le programme tourne directement sur la machine
   \item
     1950: généralisation des cartes perforées
   \end{itemize}
@@ -281,7 +280,7 @@
   \item
     Bandes magnétiques remplacent les cartes perforées
   \item
-    Moniteur résident: premier OS
+    Moniteur résident: premier SE
 
     \begin{itemize}
     \itemsep1pt\parskip0pt\parsep0pt
@@ -315,7 +314,7 @@
 
 \begin{frame}
 \frametitle{Execution multi-tâche}
-\centerline{\includegraphics[width=3in]{figs/os1}}
+\centerline{\includegraphics[width=2in]{figs/os1}}
 \itms{
   \item Idée: Executer plusieurs processus en "même temps"
   \ittms{
@@ -326,7 +325,7 @@
 \pause
   \ittms{
     \item Boucle infinie et ne jamais lâcher le CPU
-    \item Écraser la mémoire d'autres processus pour les faire crasher
+    \item Écraser la mémoire d'autres processus pour les faire cracher
   }
   \item SE propose des mécanismes pour empêcher ces problèmes
   \ittms{
@@ -342,7 +341,7 @@
   \item Idée:  Avec $N$ utilisateurs, système n'est pas forcément $N$ fois plus lent
     \ittms{
     \item Les demandes de CPU, mémoire, etc. sont intermittentes
-    \item Tous les programmes n'ont pas besoin de la même ressource simultanéement
+    \item Tous les programmes n'ont pas besoin de la même ressource simultanément
     }
   \item Où ça peut coincer ?
     \pause
@@ -364,13 +363,13 @@
 }
 \item Médiation:
 \ittms{
-  \item OS est le médiateur entre les processus et les ressources
+  \item SE est le médiateur entre les processus et les ressources
   \item Controle toutes les ressources qu'une application peut utiliser (table de capabilités)
   \item Pour chaque demande le SE vérifie que l'application à le droit de faire cette demande
 }
 \item Mode privilégié dans le CPU
 \ittms{
-  \item Applications tourne en \emph{mode utilisateur}
+  \item Applications tournent en \emph{mode utilisateur}
   \item SE tourne en \emph{mode privilégié} (ou mode noyau)
   \item Les opérations de protection ne sont disponibles qu'en \emph{node privilégié} (par exemple editer la table de capabilités).
 }
@@ -385,7 +384,7 @@
   \item Le noyau tourne en mode privilégié \Red{[en grisé]}
   \ittms{
     \item Crée et détruit les processus
-    \item Donne et vérifie qui accède au matériel
+    \item Décide et vérifie qui accède au matériel
   }
 }
 \end{frame}
@@ -719,7 +718,7 @@
   \begin{itemize}
   \itemsep1pt\parskip0pt\parsep0pt
   \item
-    Si la RAM est pleine, l'OS va déplacer la mémoire de certains
+    Si la RAM est pleine, le SE va déplacer la mémoire de certains
     processus sur un stockage secondaire (disque)
   \item
     swap
@@ -747,25 +746,25 @@
   \item La table de traduction est changée à chaque changement de contexte
   \item Elle ne contient que des traductions vers des adresses autorisées
 
-  \item L'OS peut marquer comme invalides certaines adresses virtuelles
+  \item Le SE peut marquer comme invalides certaines adresses virtuelles
   \ittms{
     \item Détecter les fautes de segmentation et interrompre les programmes
     \item Allocation paresseuse + SWAP \\
       (e.g., ramener les pages du SWAP uniquement lorsqu'elles sont accédées)
   }
-  \item L'OS peut marquer certaines adressses comme lecture seule
+  \item Le SE peut marquer certaines adressses comme lecture seule
     \ittms{
     \item Partage de données entre processus (par exemple le code executable de la libc)
     \item De nombreuses autres optimizations (copy on write par exemple)
   }
-  \item L'OS peut marquer certaines adresses comme non exécutables
+  \item Le SE peut marquer certaines adresses comme non exécutables
   \ittms{
     \item Rends difficile les attaques par injection de code
   }
 }
 \end{slide}
 
-\begin{frame}{Temps partagé (premier vrai OS)}
+\begin{frame}{Temps partagé (premier vrai SE)}
 
 \begin{itemize}
 \item
@@ -778,7 +777,7 @@
   \item
     Ordonnanceur de tâches avec priorité
   \item
-    Mémoire segmentée: sépare OS et userland
+    Mémoire segmentée: sépare SE et userland
   \item
     Interrupteur d'horloge pour interrompre les tâches
   \end{itemize}
@@ -791,7 +790,7 @@
 
 \end{frame}
 
-\begin{frame}{Developpement des OS}
+\begin{frame}{Developpement des SE}
 
 \begin{itemize}
 \itemsep1pt\parskip0pt\parsep0pt
@@ -809,7 +808,7 @@
     Modification du DOS de Seattle Computer Products
   \end{itemize}
 \item
-  1987: Tanembaum écrit MINIX (OS micro-noyau) qui servira d'inspiration
+  1987: Tanembaum écrit MINIX (SE micro-noyau) qui servira d'inspiration
   à Linux
 \item
   1991: Torvalds libère la première version de Linux
