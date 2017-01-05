@@ -59,8 +59,10 @@ connaissances théoriques apprises en cours en pratique.
     * [**Cours 2: Threads et Processus.**](./lectures/2-processus.pdf) Comment partager le CPU entre plusieurs tâches ?
     * [**Mini-Projet 1: Développement d'un shell**](./labs/MP1.html)
 
-* *2 décembre*
+* *28 novembre à 8h00*
     * [**Cours 3: Execution d'un programme.**](./lectures/3-linker.pdf) Comment un programme est chargé et exécuté ?
+
+* *2 décembre à 15h00*
     * [**TD 2**](./labs/T2.html): Reverse Engineering et exploitation de failles
 
 * *9 décembre*

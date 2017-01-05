@@ -41,7 +41,7 @@ venez de créer. À chaque question vous *committerez* vos modifications.
 Pour envoyer votre travail sur le serveur de rendu (en fin de séance), vous utiliserez la commande:
 
 ```bash
-    $ git push central master
+    $ git push origin master
 ```
 
 Notation

@@ -17,21 +17,18 @@
 
 \maketitle
 
-\begin{slide}{Plusieurs processus coexistent}
+\begin{slide}{Problèmes de l'adressage direct}
 \centerline{\includegraphics[height=1.5in]{figs/coexist}}
 
 \medskip
 
 \itms{
-  \item Adressage direct
-\ittms{
 \item Que faire si gcc souhaite plus de mémoire ?
 \item Si emacs souhaite 5 Go de mémoire sur une machine qui possède 4Go ?
 \item Si gcc écrit par erreur sur l'adresse 0x7100 ?
 \item Est-ce que le compilateur/linkeur doit savoir que gcc est à l'adresse 0x4000
 ?
 \item Que faire si un processus veut libérer sa zone mémoire ?
-  }
 }
 \end{slide}
 
@@ -52,6 +49,24 @@
   \ittms{
     \item Mémoire totale des processus souvent dépasse la mémoire physique de la
     machine.
+  }
+}
+\end{slide}
+\begin{slide}{Idée : linkeur à la volée ?}
+\centerline{\includegraphics[height=1.3in]{figs/loadtime}}
+\itms{
+  \item \emph{Linkeur} patche les adresses des symboles
+  \item Idée: fait le lien juste avant l'exécution (pas à la compilation)
+  \ittms{
+    \item Determine où les processus seront chargés (base)
+    \item Ajuste toutes les adresses (par addition de la base)
+  }
+  \item Problèmes?
+\pause
+  \ittms{
+    \item Comment mettre en place la protection ?
+    \item Comment faire la migration (pointeurs) ?
+    \item Nécessite un espace contigu suffisament grand.
   }
 }
 \end{slide}
@@ -98,49 +113,7 @@
 }
 \end{slide}
 
-\begin{slide}{Idée 1: linkeur à la volée}
-\centerline{\includegraphics[height=1.3in]{figs/loadtime}}
-\itms{
-  \item \emph{Linkeur} patche les adresses des symboles
-  \item Idée: fait le lien juste avant l'exécution (pas à la compilation)
-  \ittms{
-    \item Determine où les processus seront chargés (base)
-    \item Ajuste toutes les adresses (par addition de la base)
-  }
-  \item Problèmes?
-\pause
-  \ittms{
-    \item Comment mettre en place la protection ?
-    \item Comment faire la migration (pointeurs) ?
-    \item Nécessite un espace contigu suffisament grand.
-  }
-}
-\end{slide}
 
-\begin{slide}{Idée 2: registres base + borne}
-\centerline{\includegraphics[height=1.3in]{figs/loadtime}}
-\smallskip
-\itms{
-  \item Deux registres spéciaux:  \Red{base} et \Red{borne}
-  \item Pour chaque écriture/lecture:
-  \ittms{
-    \item Adresse Physique = Adresse Virtuelle + \Red{base}
-    \item On vérifie $0\le \mathrm{adr. virtuelle +
-      \Red{base}}<\mathrm{\Red{borne}}$, sinon interruption.
-  }
-  \item Comment déplacer un processus en mémoire ?
-  \ittms{
-\onslide<2->{
-    \item Change le registre \Red{base}
-   }
-  }
-  \item Que faire lors d'un changement de contexte ?
-  \ittms{
-\onslide<3->{
-    \item SE doit recharger les registres \Red{base} et \Red{borne}}
-  }
-}
-\end{slide}
 
 \begin{slide}{Définitions}
 \itms{
@@ -159,6 +132,30 @@
 \begin{slide}{Espace d'addressage}
 \centerline{\includegraphics[width=4in]{figs/addressspace}}
 \end{slide}
+
+
+\begin{slide}{Idée : registres base + borne}
+\itms{
+  \item Deux registres spéciaux utilisés par la MMU:  \Red{base} et \Red{borne}
+  \item Pour chaque écriture/lecture:
+  \ittms{
+    \item Adresse Physique = Adresse Virtuelle + \Red{base}
+    \item On vérifie $0\le \mathrm{adr. virtuelle} <\mathrm{\Red{borne}}$, sinon interruption.
+  }
+  \item Comment déplacer un processus en mémoire ?
+  \ittms{
+\onslide<2->{
+    \item Change le registre \Red{base}
+   }
+  }
+  \item Que faire lors d'un changement de contexte ?
+  \ittms{
+\onslide<3->{
+    \item SE doit recharger les registres \Red{base} et \Red{borne}}
+  }
+}
+\end{slide}
+
 
 \begin{slide}{Avantages et Inconvénients du système Base+Borne}
 \itms{
@@ -344,8 +341,10 @@
     \item Nombre de pages = $2^{32}/4096$ =  1.048.576
     \item Problème ?
     \pause
+    \ittms{
     \item Il faut plusieurs Mo pour stocker la table des pages de \emph{chaque processus}!
     \item \structure{Table des pages hiérarchique}
+    }
     }
 \end{slide}
 
@@ -384,28 +383,28 @@
 \input{pte.tex}
 \end{slide}
 
-\begin{slide}{Segmentation sur x86}
-\itms{
-  \item L'architecture x86 supporte aussi la segmentation
-  \ittms{
-    \item base du segment + adresse = \emph{adresse linéaire}
-    \item La traduction virtuelle s'effecture sur l'adresse linéaire
-  }
-  \item Deux niveaux de traduction et protection
-  \item À quoi cela sert d'avoir segmentation + pagination ?
-  \pause
-  \item La plus part du temps à rien (Historique)
-  \ittms{
-    \item La plus part des SE configurent base = 0, borne =
-      0xffffffff \\
-  }
-  \item Quelques applications de niche:
-  \ittms{
-    \item VMware utilise la segmentation pour detecter des erreurs sur la VM
-    \item OpenBSD utilise la segmentation pour rendre la pile non executable
-  }
-}
-\end{slide}
+%\begin{slide}{Segmentation sur x86}
+%\itms{
+%  \item L'architecture x86 supporte aussi la segmentation
+%  \ittms{
+%    \item base du segment + adresse = \emph{adresse linéaire}
+%    \item La traduction virtuelle s'effecture sur l'adresse linéaire
+%  }
+%  \item Deux niveaux de traduction et protection
+%  \item À quoi cela sert d'avoir segmentation + pagination ?
+%  \pause
+%  \item La plus part du temps à rien (Historique)
+%  \ittms{
+%    \item La plus part des SE configurent base = 0, borne =
+%      0xffffffff \\
+%  }
+%  \item Quelques applications de niche:
+%  \ittms{
+%    \item VMware utilise la segmentation pour detecter des erreurs sur la VM
+%    \item OpenBSD utilise la segmentation pour rendre la pile non executable
+%  }
+%}
+%\end{slide}
 
 \begin{slide}{Coût de la Pagination: comment la rendre efficace ?}
 \itms{
@@ -420,7 +419,7 @@
   \ittms{
     \item \emph{Translation Lookaside Buffer} or \Red{TLB}
     \item Chaque TLB contient les dernières entrées de page accédées
-    \item Configuration typique: 64-2K entrées, 4-way to fully associative, 95\% hit rate
+    \item Configurations typiques: 64-2K entrées, 4-way to fully associative, 95\% hit rate
   }
   \item Pour chaque accès
   \ittms{
