@@ -342,7 +342,7 @@ les tâches respecteront leurs échéances futures. [Liu & Layland '73]
 
 * À tout instant $t$, le travail le plus prioritaire est celui dont l'échéance est la plus courte.
 
-* Condition d'ordonnançabilité avec EDF (pour des tâches périodiques et $D_i = C_i$) : $U \leq 1$.
+* Condition d'ordonnançabilité avec EDF (pour des tâches périodiques et $D_i = T_i$) : $U \leq 1$.
 
 * EDF est optimal: si un ensemble de tâches est ordonnançable, alors il est ordonnançable avec EDF.
 
