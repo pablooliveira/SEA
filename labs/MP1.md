@@ -27,10 +27,10 @@ Pour tous les Mini-Projets (MPs) de système on
 utilisera [git](http://git-scm.com). Vous avez vu son utilisation et configuré
 un dépôt dans le [TP1](T1.html).
 
-Allez sur codeanywhere et créez un nouvel répertoire pour travailler sur le MP1:
+Allez dans votre dépôt git et créez un nouvel répertoire pour travailler sur le MP1:
 
 ```bash
-    $ cd sea/
+    $ cd prenom-nom/
     # Créez maintenant un répertoire MP1
     $ mkdir MP1/
     $ cd MP1/
@@ -62,15 +62,14 @@ Pour executer votre shell, le script de correction automatique utilisera la comm
    $ ./mishell
 ```
 
-Assurez vous donc de commiter un Makefile qui fabrique un binaire appellé `mishell` (comme mini shell).
+Assurez vous donc de commiter un `Makefile` qui fabrique un binaire appellé `mishell` (comme mini shell).
 
 Notation
 --------
 
 Ce MP sera noté. La date de rendu est disponible sur
 le [calendrier des cours](../index.html). Le rendu se fera en pushant sur votre
-dépôt SEA. Assurez vous que lors du [TP1](T1.html) vous m'avez donné les droits
-en lecture sur bitbucket; sinon je ne pourrai pas le corriger.
+dépôt SEA. 
 
 Trois critères seront utilisés pour la notation:
 
