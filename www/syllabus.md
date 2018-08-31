@@ -1,7 +1,8 @@
-#Systèmes d'Exploitation Avancés (SEA) 2016-2017
+---
+title: Systèmes d'Exploitation Avancés (SEA) 2018-2019 
+---
 
-<img src="styracosaurus.png" align="right" height="200px" \>
-
+![](styracosaurus.png "Styracosaurus")
 
 ## Informations Administratives
 
@@ -24,7 +25,7 @@
 
     * Un contrôle en fin de semestre
 
-    * QCM réguliers en début de cours (au moins trois)
+    * QCM réguliers en début de cours (au moins deux)
 
     * Plusieurs mini-projets à rendre
 
@@ -38,9 +39,9 @@ anti-plagiat à l'UVSQ](http://www.etu.uvsq.fr/medias/fichier/guide-anti-plagiat
 
 ## Horaire des cours et retards
 
-Les cours commencent à 8h15. L'horaire est un peu plus matinal que pour les autres cours; mais cela permets
-également au Groupe 1 de partir en WE un peu plus tôt le vendredi soir :-) Je compte sur votre ponctualité 
-et me réserve le droit de ne pas admettre en cours les étudiants sans justificatif arrivant en retard.
+Les cours commencent à 9h15. Je compte sur votre ponctualité et me réserve le
+droit de ne pas admettre en cours les étudiants sans justificatif arrivant en
+retard.
 
 ## Mini-Projets
 
@@ -49,42 +50,52 @@ mini-projets que vous commencez en TP mais que vous finissez à la maison.  Ces
 projets représentent 35% de la note finale. Ils sont une occasion de mettre les
 connaissances théoriques apprises en cours en pratique.
 
-##Calendrier
+## Rendu des TPs et des mini-projets
 
-* *18 novembre *
+Le rendu des TDs et des mini-projets se fera en utilisant `git` et en pushant
+votre travail sur [le serveur gitlab mis à votre
+disposition](http://tahiti.prism.uvsq.fr). Vous avez du recevoir un mail vous
+invitant à vous y inscrire.
+
+## Calendrier
+
+* *3 septembre*
     * [**Cours 1: Introduction.**](./lectures/1-introduction.pdf) Qu'est ce qu'un système d'exploitation ?
+
+* *10 septembre*
+    * [**Cours 2: Threads et Processus.**](./lectures/2-processus.pdf) Comment partager le CPU entre plusieurs tâches ?
     * [**TD 1**](./labs/T1.html): Mise en place de l'environnement de travail: git / gdb / gcc et rappels de Système 1.
 
-* *25 novembre *
-    * [**Cours 2: Threads et Processus.**](./lectures/2-processus.pdf) Comment partager le CPU entre plusieurs tâches ?
-    * [**Mini-Projet 1: Développement d'un shell**](./labs/MP1.html)
+* *17 septembre*
+    * **Pas de cours et de TP en présentiel cette semaine**. 
+    * Travail en autonomie pour démarrer le [**Mini-Projet 1: Développement d'un shell**](./labs/MP1.html).
 
-* *28 novembre à 8h00*
+* *24 septembre*
     * [**Cours 3: Execution d'un programme.**](./lectures/3-linker.pdf) Comment un programme est chargé et exécuté ?
-
-* *2 décembre à 15h00*
     * [**TD 2**](./labs/T2.html): Reverse Engineering et exploitation de failles
 
-* *9 décembre*
+* *1 octobre*
     * [**Cours 4: Programmation concurrente.**](./lectures/4-concurrence.pdf) Pourquoi et comment synchroniser les tâches ?
     * [**TD 3**](./labs/T3.html): Programmation concurrente
 
-* **15 décembre avant 23h59, rendu du mini-projet 1 sur votre git** 
-
-* *16 décembre*
+* *8 octobre*
     * [**Cours 5: Ordonnancement.**](./lectures/5-ordo.pdf) Dans quel ordre exécuter les tâches ?
     * [**Mini-Projet 2**](./labs/MP2.html): Implémentation d'un simulateur d'ordonnancement
 
-* *6 janvier*
-    * [**Cours 7: Mémoire Virtuelle.**](./lectures/7-memvirt.pdf) Comment partager la mémoire entre plusieurs tâches ?
-    * [**TD 4**](./labs/T4.html): Exercices sur la mémoire virtuelle (sur feuille)
+* **14 octobre avant 23h59, rendu du mini-projet 1 sur votre git**
+
+* *15 octobre* 
+    * [**Cours 6: Ordonnancement Temps Réel.**](./lectures/6-ordoTR.pdf) Ordonnancer avec des échéances temporelles.
     * Session de révision (préparez vos questions)
 
-* *13 janvier*
-    * [**Cours 6: Ordonnancement Temps Réel.**](./lectures/6-ordoTR.pdf) Ordonnancer avec des échéances temporelles.
+* *22 octobre*
+    * [**Cours 7: Mémoire Virtuelle.**](./lectures/7-memvirt.pdf) Comment partager la mémoire entre plusieurs tâches ?
+    * [**TD 4**](./labs/T4.html): Exercices sur la mémoire virtuelle (sur feuille)
+
+* *5 novembre*
     * **CC: Contrôle Continu Final**
 
-* **17 janvier avant 23h59, rendu du mini-projet 2 sur votre git** 
+* **11 novembre avant 23h59, rendu du mini-projet 2 sur votre git** 
 
 ## Bibliographie et Ressources
 
