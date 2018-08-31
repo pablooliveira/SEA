@@ -133,30 +133,34 @@ Exemples de systèmes temps-réel:
   * Taux d'utilisation: quantité de temps de traitement par les tâches par rapport au temps total.
     * L'utilisation du processeur est définie comme $U = \sum_{i=1}^n \frac{C_i}{T_i}$
 
+
 ## Rate monotonic analysis
 
    * La priorité d'une tâche $i$ est égale à $P_i = \frac{1}{T_i}$.
    * Plus la fréquence est forte, plus la tâche est prioritaire.
    * C'est toujours la tâche la plus prioritaire qui est exécutée d'abord.
 
-   * Propriétés:
+   * Si toutes les périodes sont multiples entre elles (système harmonique) 
+
+     * le système admet un ordonnancement _ssi_ $U \leq 1$.
+
+## Rate monotonic analysis
+   * Si le système n'est pas harmonique 
 
     * [Liu & Layland '73] Si $U \leq n.(2^{\frac{1}{n}} - 1)$ alors il existe un ordonnancement satisfaisant toutes les échéances.
 
     * C'est une condition *suffisante*, mais *pas* une condition *nécessaire*.
 
+    * On montre $\lim_{n \rightarrow \infty} n(2^{1/n} - 1) = ln(2) \simeq 0.69$
+
+    * Si la charge des tâches représente moins que $69\%$ du temps processeur, le système admet un ordonnancement RM.
 
 ## Rate monotonic analysis
 
 
-   * On montre $\lim_{n \rightarrow \infty} n(2^{1/n} - 1) = ln(2) \simeq 0.69$
+* [Leung & Whitehead '82] Le système RM est optimal parmi les ordonnancements à priorité statique. Çàd si n'importe quel
+     ordonnancement *à priorité statique* peut ordonanncer un système de tâches, alors RM le peut aussi.
 
-   * Si la charge des tâches représente moins que $69\%$ du temps processeur, le système admet un ordonnancement RM.
-
-   * [Leung & Whitehead '82] Le système RM est optimal parmi les ordonnancements statiques. Çàd si n'importe quel
-     ordonnancement *statique* peut ordonanncer un système de tâches, alors RM le peut aussi.
-
-   * Si toutes les périodes sont multiples entre elles (système harmonique) alors la condition suffisante et maintenant *nécessaire* devient $U \leq 1$.
 
 ## Théorème de la zone critique
 
