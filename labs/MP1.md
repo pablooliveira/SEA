@@ -1,5 +1,6 @@
-Systèmes d'Exploitation: Mini-Projet 1
-======================================
+---
+title: Systèmes d'Exploitation -- Mini-Projet 1
+---
 
 Mise en place
 -------------
@@ -43,6 +44,25 @@ Pour envoyer votre travail sur le serveur de rendu (en fin de séance), vous uti
 ```bash
     $ git push origin master
 ```
+
+Makefile et nom du binaire
+--------------------------
+
+Pour compiler votre shell, le script de correction automatique utilisera les commandes suivantes:
+
+```bash
+   $ cd MP1/
+   $ make
+```
+
+Pour executer votre shell, le script de correction automatique utilisera la commande suivante:
+
+```bash
+   $ cd MP1/
+   $ ./mishell
+```
+
+Assurez vous donc de commiter un Makefile qui fabrique un binaire appellé `mishell` (comme mini shell).
 
 Notation
 --------
