@@ -494,6 +494,7 @@ int main() {
   static float x = 0.0;
   printf("enter number: ");
   scanf("%f", &x);
+  val = sin(x);
   printf("Sine is %f\n", val);
 }
 \end{ccode}
@@ -537,10 +538,10 @@ int printf(char *fmt, ...) { /* ... */ }
 \centerline{\includegraphics[width=4.8in]{figs/2mreloc}}
 \end{slide}
 
-\begin{slide}{Écriture finale}
-\vspace*{-.2in}
-\centerline{\includegraphics[width=4.8in]{figs/2mout}}
-\end{slide}
+%\begin{slide}{Écriture finale}
+%\vspace*{-.2in}
+%\centerline{\includegraphics[width=4.8in]{figs/2mout}}
+%\end{slide}
 
 \begin{slide}{Examiner les programmes avec nm}
 \begin{columns}
