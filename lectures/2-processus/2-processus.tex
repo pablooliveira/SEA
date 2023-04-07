@@ -300,12 +300,12 @@ void doexec (void) {
       dup2 (pipefds[1], 1);
       close (pipefds[0]); close (pipefds[1]);
       outcmd = NULL;
-      break;
+      break; /* lancement command1 */
     default:
       dup2 (pipefds[0], 0);
       close (pipefds[0]); close (pipefds[1]);
       parse_command_line (&args, &outcmd);
-      break;
+      break; /* lancement command2, etc... */
     }
   }
 \end{minted}
@@ -402,7 +402,7 @@ BOOL WINAPI CreateProcess(
 \end{slide}
 
 \begin{slide}{État d'un processus}
-\centerline{\includegraphics[width=3.7in]{procstate}}
+\centerline{\includegraphics[width=3.7in]{states}}
 
 \itms{
   \item Les processus sont dans un des états suivants
@@ -721,7 +721,8 @@ BOOL WINAPI CreateProcess(
 
 \defverbatim[colored]\threadswitch{\small%
 \begin{asm}
-pushl %ebp; movl %esp,%ebp             # On sauve epb et esp
+pushl %ebp;                            # On sauve old_epb
+movl %esp,%ebp                         # new_ebp pointe sur old_ebp
 pushl %ebx; pushl %esi; pushl %edi     # Sauve callee-saved
 
 movl 8(%ebp),%edx                      # %edx = thread_current

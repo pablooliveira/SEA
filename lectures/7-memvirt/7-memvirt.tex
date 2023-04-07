@@ -140,7 +140,7 @@
   \item Pour chaque écriture/lecture:
   \ittms{
     \item Adresse Physique = Adresse Virtuelle + \Red{base}
-    \item On vérifie $0\le \mathrm{adr. virtuelle} <\mathrm{\Red{borne}}$, sinon interruption.
+    \item On vérifie $0\le \mathrm{adr. virtuelle} <\mathrm{\Red{base + borne}}$, sinon interruption.
   }
   \item Comment déplacer un processus en mémoire ?
   \ittms{
@@ -207,7 +207,7 @@
 \ittms{
   \item Bits de poids fort donnent le segment, Bits de poids faible donnent
   l'offset (PDP-10)
-  \item Où alors segment choisi par l'instruction utilisée (x86)
+  \item ... ou alors le segment est choisi par l'instruction utilisée (x86)
 }
 }
 \end{slide}

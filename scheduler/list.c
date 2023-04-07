@@ -19,7 +19,7 @@
  * IN THE SOFTWARE.  All rights reserved.
  */
 
-#include <stdlib.h> 
+#include <stdlib.h>
 #include <stdio.h>
 #include "sched.h"
 
@@ -33,10 +33,10 @@ void fail(char * message) {
 void add(tlist * l, tproc * p) {
     tnode * new = calloc(1, sizeof(tnode));
     new->proc = p;
-    
+
     if (l->first == NULL) {
         l->first = new;
-        l->last  = new; 
+        l->last  = new;
     } else {
         l->last->next = new;
         l->last = new;
@@ -46,7 +46,7 @@ void add(tlist * l, tproc * p) {
 /* Remove element `p` from list `l`,
  * if `p` is missing from `l`, this function does nothing.
  * WARNING: del frees the tnode when removing `p`,
- * this must be taken into account if used while iterating 
+ * this must be taken into account if used while iterating
  * a list. */
 void del(tlist * l, tproc * p) {
     /* l is empty do nothing */
@@ -60,14 +60,14 @@ void del(tlist * l, tproc * p) {
         free(l->first);
         l->first = succesor;
         return;
-    } 
+    }
 
     tnode * cur = l->first;
     while (1) {
         /* p was not found, return */
         if (cur->next == NULL) {
             return;
-        } 
+        }
 
         /* p is found, remove it, and reconnect the list */
         if (cur->next->proc == p) {

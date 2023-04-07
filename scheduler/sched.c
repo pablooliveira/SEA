@@ -91,7 +91,7 @@ void simulate(int max_time) {
     while(time <= max_time) {
         /* Activate process */
         for (tnode * p = procs.first; p != NULL;) {
-            tproc * proc = p->proc; 
+            tproc * proc = p->proc;
             p = p->next;
 
             /* Move every process which should be activated,
@@ -120,14 +120,14 @@ void simulate(int max_time) {
 
             /* Remove delta from chosen process */
             proc->remaining-=delta;
- 
-            /* If the process remaining time is less zero or less, 
-             * delete it */ 
+
+            /* If the process remaining time is less zero or less,
+             * delete it */
             if (proc->remaining <= 0) {
                 del(&ready, proc);
                 del(&procs, proc);
             }
-        } 
+        }
         /* If no process is ready, just advance the simulation timer */
         else {
             time += 1;
@@ -139,17 +139,17 @@ void simulate(int max_time) {
 int main(int argc, char * argv[]) {
 
     /* Parse arguments */
-    if (argc != 2) usage(); 
+    if (argc != 2) usage();
 
     /* Seed random number generator */
     srand(time(NULL) ^ getpid());
 
-    char * method = argv[1]; 
+    char * method = argv[1];
 
     /* The sched argument should be one of fcfs, rr, sjf, srtf */
     if (strcmp(method, "fcfs") == 0) {
         scheduler = fcfs;
-    } 
+    }
     else if (strcmp(method, "rr") == 0) {
         scheduler = rr;
     }
@@ -158,7 +158,7 @@ int main(int argc, char * argv[]) {
     }
     else if (strcmp(method, "srtf") == 0) {
         scheduler = srtf;
-    } 
+    }
     else {
         usage();
     }
@@ -170,13 +170,13 @@ int main(int argc, char * argv[]) {
     for(int i = 0; i < sizeof(tasks)/sizeof(tproc); i ++) {
         add(&procs, &(tasks[i]));
     }
-    
+
     /* Output RTGrid header */
     printf("\\begin{RTGrid}[width=0.8\\textwidth]{%d}{%d}\n", len(&procs), max_time);
 
-    /* Output task arrivals for all tasks */ 
+    /* Output task arrivals for all tasks */
     for (tnode * p = procs.first; p != NULL; p = p->next) {
-        printf("\\TaskArrival{%d}{%d}\n", p->proc->pid, p->proc->activation); 
+        printf("\\TaskArrival{%d}{%d}\n", p->proc->pid, p->proc->activation);
     }
 
     /* Start scheduling simulation */

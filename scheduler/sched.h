@@ -47,7 +47,7 @@ typedef struct {
 } tstats;
 
 /* Function pointer for scheduler methods */
-typedef tproc* (*tscheduler)(tlist*, tlist*, int*); 
+typedef tproc* (*tscheduler)(tlist*, tlist*, int*);
 
 /*****************/
 /* tlist methods */
@@ -62,7 +62,7 @@ void add(tlist * l, tproc * p);
 /* Remove element `p` from list `l`,
  * if `p` is missing from `l`, this function does nothing.
  * WARNING: del frees the tnode when removing `p`,
- * this must be taken into account if used while iterating 
+ * this must be taken into account if used while iterating
  * a list. */
 void del(tlist * l, tproc * p);
 

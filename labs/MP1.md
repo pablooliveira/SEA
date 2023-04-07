@@ -62,14 +62,18 @@ Pour executer votre shell, le script de correction automatique utilisera la comm
    $ ./mishell
 ```
 
-Assurez vous donc de commiter un `Makefile` qui fabrique un binaire appellé `mishell` (comme mini shell).
+Assurez vous donc de commiter un `Makefile` qui fabrique un binaire appellé `mishell` (comme mini shell). Le `Makefile` ne doit pas lancer le shell ou d'autres programmes.
+
+Assurez vous que le shell est robuste. Idéalement testez le sur une machine qui n'est pas votre machine habituelle, par exemple en vous connectant sur un des serveurs Linux de l'ISTY.
+
+Suivez scrupuleusement les instructions (ne changez pas les spécifications du TP), en effet vos shells sont testés de manière automatique. 
+
+Vérifiez également que votre shell supporte des chemins longs. Vous pouvez faire l'hypothèse que la taille maximale d'un chemin est 4096 caractères.
 
 Notation
 --------
 
-Ce MP sera noté. La date de rendu est disponible sur
-le [calendrier des cours](../index.html). Le rendu se fera en pushant sur votre
-dépôt SEA. 
+Ce MP sera noté. Le rendu se fera en pushant sur votre dépôt SEA sur le git.
 
 Trois critères seront utilisés pour la notation:
 

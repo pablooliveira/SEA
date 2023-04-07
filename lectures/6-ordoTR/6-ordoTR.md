@@ -255,8 +255,6 @@ les tâches respecteront leurs échéances futures. [Liu & Layland '73]
 
 \end{center}
 
-* Mais système ordonnonçable, théorème de la zone critique.
-
 ## Exemple 3
 
 
