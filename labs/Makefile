@@ -6,7 +6,7 @@ all: html
 html: $(ALL_HTML)
 
 %.html: %.md
-	pandoc --self-contained -s -c pandoc.css --toc --mathjax -f markdown $< -o $@
+	pandoc --embed-resources --standalone -s -c pandoc.css --toc --mathjax -f markdown $< -o $@
 
 clean:
 	rm $(ALL_HTML)

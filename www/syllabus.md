@@ -1,39 +1,24 @@
 ---
-title: Systèmes d'Exploitation Avancés (SEA) 2019-2020 
+title: Systèmes d'Exploitation Avancés (SEA) 2024-2025
 ---
 
 ![](styracosaurus.png "Styracosaurus")
 
 ## Informations Administratives
 
-* Enseignant principal: pablo.oliveira@uvsq.fr
-* Chargé de TDs: pablo.oliveira@uvsq.fr
-
-* Groupe de discussion
-
-    * Discord IATIC4, Canal SEA
-
-    * Sert à poser des questions sur les cours, TDs, projets. Tout le monde est
-      encouragé à répondre !
-
-    * **Attention:** Pour que tout le monde profite des questions/réponses,
-      merci de les poser sur le groupe. 
+* Enseignants: pablo.oliveira@uvsq.fr, jgurhem@aneo.fr
 
 * Notation
 
+    * Mini-projets à rendre
     * Un contrôle en fin de semestre
 
-    * Mini-projets à rendre
-    
-    * QCM réguliers (au moins deux)
-
     * Note Finale:
-        * 45% Contrôle 
-        * 35% Mini-Projet
-        * 25% QCM 
+        * 60% Contrôle
+        * 40% Mini-Projet
 
 Pour tout rendu je vous invite à prendre connaissance de la [charte
-anti-plagiat à l'UVSQ](http://www.uvsq.fr/medias/fichier/guide-anti-plagiat-et-charte-nvlogo_1526369095888-pdf?ID_FICHE=188885&INLINE=FALSE).
+anti-plagiat à l'UVSQ](https://www.uvsq.fr/medias/fichier/charte-anti-plagiat-v20210825_1633613607876-pdf?ID_FICHE=144644&INLINE=FALSE)
 
 ## Horaire des cours et retards
 
@@ -41,17 +26,46 @@ Je compte sur votre ponctualité, merci d'arriver quelques minutes avant le déb
 
 ## Mini-Projets
 
-Une partie de l'apprentissage en SEA se fait par l'intermédiaire de
-mini-projets que vous commencez en TP mais que vous finissez à la maison.   Ils
-sont une occasion de mettre les connaissances théoriques apprises en cours en
+Une partie de l'apprentissage en SEA se fait par l'intermédiaire d'un
+mini-projet que vous commencez en TP mais que vous finissez à la maison.  C'est
+une occasion de mettre les connaissances théoriques apprises en cours en
 pratique.
 
-## Rendu des TPs et des mini-projets
+## Rendu des TPs et du mini-projet
 
-Le rendu des TDs et des mini-projets se fera en utilisant `git` et en pushant
+Le rendu des TDs et du mini-projet se fera en utilisant `git` et en pushant
 votre travail sur [le serveur gitlab mis à votre
-disposition](http://gitlab-chps.ens.uvsq.fr). Vous allez recevoir un mail vous
-invitant à vous y inscrire.
+disposition](http://gitlab-chps.ens.uvsq.fr).
+
+## Syllabus
+
+* séance 1
+    * [**Cours 1: Introduction.**](./lectures/1-introduction.pdf) Qu'est ce qu'un système d'exploitation ?
+
+* séance 2
+    * [**Cours 2: Threads et Processus.**](./lectures/2-processus.pdf) Comment partager le CPU entre plusieurs tâches ?
+    * [**TD 1**](./labs/T1.html): Mise en place de l'environnement de travail: git / gdb / gcc et rappels de Système 1.
+    * Travail en autonomie pour démarrer le [**Mini-Projet 1: Développement d'un shell**](./labs/MP1.html).
+
+* *séance 3*
+    * [**Cours 3: Execution d'un programme.**](./lectures/3-linker.pdf) Comment un programme est chargé et exécuté ?
+    * [**TD 2**](./labs/T2.html): Reverse Engineering et exploitation de failles
+
+* *séance 4*
+    * [**Cours 4: Programmation concurrente.**](./lectures/4-concurrence.pdf) Pourquoi et comment synchroniser les tâches ?
+    * [**TD 3**](./labs/T3.html): Programmation concurrente
+
+* *séance 5*
+    * [**Cours 5: Ordonnancement.**](./lectures/5-ordo.pdf) Dans quel ordre exécuter les tâches ?
+    * (optionnel) [**Cours 6: Ordonnancement Temps Réel.**](./lectures/6-ordoTR.pdf) Ordonnancer avec des échéances temporelles.
+    * [**TD 4**](./labs/T5.html): Implémentation d'un simulateur d'ordonnancement
+
+* *séance 6*
+    * **Cours 6: Introduction au cloud computing** (slides envoyés par Jérôme Gurhem)
+
+* *séance 7*
+    * [**Cours 7: Mémoire Virtuelle.**](./lectures/7-memvirt.pdf) Comment partager la mémoire entre plusieurs tâches ?
+    * [**TD 5**](./labs/T5.html): Exercices sur la mémoire virtuelle
 
 ## Bibliographie et Ressources
 
